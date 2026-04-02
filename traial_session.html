@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTMLを書いてみよう！</title>
+  <style>
+    body {
+      font-family: "Hiragino Sans", "Meiryo", sans-serif;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 24px 32px;
+      background: #f9f9f9;
+      color: #222;
+      line-height: 1.8;
+    }
+    h1 { font-size: 2em; border-bottom: 3px solid #4a90d9; padding-bottom: 8px; }
+    h2 { font-size: 1.4em; border-left: 5px solid #4a90d9; padding-left: 10px; margin-top: 2em; }
+    h3 { font-size: 1.1em; color: #444; }
+    a { color: #4a90d9; }
+    ul, ol { padding-left: 1.5em; }
+    li { margin: 4px 0; }
+
+    .intro-box {
+      background: #fff3cd;
+      border-left: 5px solid #ffc107;
+      padding: 12px 16px;
+      border-radius: 4px;
+      margin-bottom: 1.5em;
+    }
+
+    .tag-list { list-style: none; padding: 0; }
+    .tag-list > li {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      padding: 12px 16px;
+      margin-bottom: 12px;
+    }
+    .tag-name {
+      font-family: monospace;
+      font-size: 1.05em;
+      font-weight: bold;
+      color: #c0392b;
+    }
+    .tag-desc { margin: 6px 0 10px 0; color: #444; }
+
+    .info-box {
+      background: #eef6ff;
+      border: 1px solid #b3d4f5;
+      border-radius: 6px;
+      padding: 10px 14px;
+      margin-top: 8px;
+    }
+    .info-box .info-label {
+      font-size: 0.8em;
+      font-weight: bold;
+      color: #4a90d9;
+      margin-bottom: 6px;
+    }
+
+    pre {
+      background: #1e1e1e;
+      color: #d4d4d4;
+      padding: 14px 16px;
+      border-radius: 6px;
+      overflow-x: auto;
+      font-size: 0.92em;
+      line-height: 1.6;
+      margin: 0;
+    }
+    code { font-family: "Fira Code", "Consolas", monospace; }
+
+    .copy-wrap { position: relative; }
+    .copy-btn {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      background: #4a90d9;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      padding: 4px 10px;
+      font-size: 0.78em;
+      cursor: pointer;
+      opacity: 0.85;
+    }
+    .copy-btn:hover { opacity: 1; }
+    .copy-btn.copied { background: #27ae60; }
+
+    .final-box {
+      background: #eafaf1;
+      border-left: 5px solid #27ae60;
+      padding: 14px 18px;
+      border-radius: 4px;
+      margin-top: 2em;
+    }
+  </style>
+</head>
+<body>
+
+<h1>HTMLを書いてみよう！</h1>
+<p><strong>Webページの「骨組み」を作ってみよう</strong></p>
+
+<div class="intro-box">
+  <strong><a href="https://codepen.io/pen/" target="_blank">CodePen を開く ↗</a></strong><br>
+  無料ですが、会員登録しないと保存はされません。登録したくない人は、うっかりブラウザバックやリロードをしてしまわないように注意しましょう。可能なら登録した方が後の部分で共有できて便利です。
+</div>
+
+<h2>HTMLとは</h2>
+<ul>
+  <li>Webページの構造を作るための言語です。</li>
+  <li>「タグ」という <code>&lt;&gt;</code> で囲んだ命令を使って書きます。</li>
+  <li>開始タグ <code>&lt;h1&gt;</code> と終了タグ <code>&lt;/h1&gt;</code> でテキストを挟みます。</li>
+</ul>
+
+<h2>色々なタグ</h2>
+<p>適当にCodePenにコピペして、どういう変化をするのか弄ってみましょう</p>
+
+<ul class="tag-list">
+
+  <li>
+    <div class="tag-name">コメントアウト : &lt;!-- うおおお --&gt;</div>
+    <p class="tag-desc"><code>&lt;!--</code> と <code>--&gt;</code> で囲んだ部分はブラウザに表示されません。「ここ何のコードだっけ？」ってメモを残したいときに便利です。</p>
+    <div class="info-box">
+      <div class="info-label">使い方</div>
+      <div class="copy-wrap">
+        <pre><code>&lt;!-- これはコメントです。ブラウザには表示されません --&gt;
+&lt;p&gt;これは表示されます&lt;/p&gt;</code></pre>
+        <button class="copy-btn">コピー</button>
+      </div>
+    </div>
+  </li>
+
+  <li>
+    <div class="tag-name">&lt;h1&gt; ～ &lt;h6&gt; : 見出しタグ</div>
+    <p class="tag-desc">h1 が一番大きく、数字が増えるほど小さくなります。記事のタイトルや章タイトルみたいなイメージで使いましょう。</p>
+    <div class="info-box">
+      <div class="info-label">使い方</div>
+      <div class="copy-wrap">
+        <pre><code>&lt;h1&gt;一番大きい見出し&lt;/h1&gt;
+&lt;h2&gt;二番目に大きい見出し&lt;/h2&gt;
+&lt;h3&gt;三番目に大きい見出し&lt;/h3&gt;</code></pre>
+        <button class="copy-btn">コピー</button>
+      </div>
+    </div>
+  </li>
+
+  <li>
+    <div class="tag-name">&lt;div&gt; : グループ分けタグ</div>
+    <p class="tag-desc">「ここからここまでひとまとめ！」って箱を作るタグです。見た目は何も変わりませんが、あとでCSSでスタイルをつけるときにとても役立ちます。</p>
+    <div class="info-box">
+      <div class="info-label">使い方</div>
+      <div class="copy-wrap">
+        <pre><code>&lt;div&gt;
+  &lt;p&gt;この段落はdivの中にある&lt;/p&gt;
+  &lt;p&gt;こっちも同じグループ&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+        <button class="copy-btn">コピー</button>
+      </div>
+    </div>
+  </li>
+
+  <li>
+    <div class="tag-name">&lt;ul&gt; と &lt;li&gt; : リスト（箇条書き）</div>
+    <p class="tag-desc">箇条書きリストを作るタグです。<code>&lt;ul&gt;</code> がリスト全体の箱で、<code>&lt;li&gt;</code> が各項目。<code>&lt;ul&gt;</code> を <code>&lt;ol&gt;</code> に変えると番号付きリストになります。</p>
+    <div class="info-box">
+      <div class="info-label">使い方</div>
+      <div class="copy-wrap">
+        <pre><code>&lt;!-- 順番なしリスト --&gt;
+&lt;ul&gt;
+  &lt;li&gt;りんご&lt;/li&gt;
+  &lt;li&gt;みかん&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!-- 順番ありリスト --&gt;
+&lt;ol&gt; 好きな果物ランキング
+  &lt;li&gt;りんご&lt;/li&gt;
+  &lt;li&gt;みかん&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+        <button class="copy-btn">コピー</button>
+      </div>
+    </div>
+  </li>
+
+  <li>
+    <div class="tag-name">&lt;p&gt; : 段落タグ</div>
+    <p class="tag-desc">文章のかたまりを書くときに使うタグです。段落ごとに <code>&lt;p&gt;</code> で囲む習慣をつけておくと、あとでCSSで整えるのが楽になります。</p>
+    <div class="info-box">
+      <div class="info-label">使い方</div>
+      <div class="copy-wrap">
+        <pre><code>&lt;p&gt;ここに文章を書きます。&lt;/p&gt;
+&lt;p&gt;別の段落はまた別のpタグで囲みます。&lt;/p&gt;</code></pre>
+        <button class="copy-btn">コピー</button>
+      </div>
+    </div>
+  </li>
+
+  <li>
+    <div class="tag-name">&lt;br&gt; : 改行タグ</div>
+    <p class="tag-desc">文章を改行するタグです。<code>&lt;/br&gt;</code> みたいな終了タグは不要で、<code>&lt;br&gt;</code> だけでOKです。</p>
+    <div class="info-box">
+      <div class="info-label">使い方</div>
+      <div class="copy-wrap">
+        <pre><code>&lt;p&gt;一行目の文章&lt;br&gt;
+ここから二行目になります&lt;/p&gt;</code></pre>
+        <button class="copy-btn">コピー</button>
+      </div>
+    </div>
+  </li>
+
+  <li>
+    <div class="tag-name">&lt;a&gt; : リンクタグ</div>
+    <p class="tag-desc">リンクを貼るタグです。<code>href="URL"</code> でリンク先を指定します。<code>target="_blank"</code> をつけると別タブで開けます。</p>
+    <div class="info-box">
+      <div class="info-label">使い方</div>
+      <div class="copy-wrap">
+        <pre><code>&lt;!-- 普通のリンク --&gt;
+&lt;a href="https://example.com"&gt;ここをクリック&lt;/a&gt;
+
+&lt;!-- 別タブで開くリンク --&gt;
+&lt;a href="https://example.com" target="_blank"&gt;別タブで開く&lt;/a&gt;</code></pre>
+        <button class="copy-btn">コピー</button>
+      </div>
+    </div>
+  </li>
+
+</ul>
+
+<h2>実際のコード</h2>
+<p>コピペして自分の好きなように書き換えてみましょう！色々できる人はガンガン書き換えて自分のサイトを作ってください！<br>
+出来上がったサイトは以下のチャンネルにスクショとHTML（ダウンロードは下のやり方で）等を投稿して、自己紹介してください！</p>
+<p>（あとでチャンネルを作ってはる）</p>
+<p>登録した人は右下のexportからzipファイルをダウンロードして、その中の<code>src/</code>に入っているhtml形式のファイルが今回書いたコードです。上の自己紹介と一緒に投稿しよう。もしくはshareからリンクを貼ってください</p>
+
+<div class="copy-wrap">
+  <pre><code>&lt;!--
+  CodePenでは &lt;!DOCTYPE html&gt; や &lt;head&gt; は不要です。
+  &lt;body&gt;の中身だけ書けばOK！
+--&gt;
+
+&lt;h1&gt;えびせんの自己紹介&lt;/h1&gt;
+
+&lt;div&gt; &lt;!-- このdivは基本情報をくくっている --&gt;
+  &lt;h2&gt;基本情報&lt;/h2&gt; &lt;!-- &lt;h2&gt; : 2番目に大きい見出し --&gt;
+  &lt;ul&gt;
+    &lt;li&gt;名前: えびせん&lt;/li&gt;
+    &lt;li&gt;すきなもの: プログラミング、ラーメン&lt;/li&gt;
+    &lt;li&gt;好きなゲーム
+      &lt;ol&gt;
+        &lt;li&gt;Slay the Spire&lt;/li&gt;
+        &lt;li&gt;splatoon&lt;/li&gt;
+      &lt;/ol&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+  &lt;h2&gt;プログラミングについて&lt;/h2&gt;
+  &lt;h3&gt;勉強中の内容&lt;/h3&gt; &lt;!-- &lt;h3&gt; : 3番目に大きい見出し --&gt;
+  &lt;ol&gt;
+    &lt;li&gt;Go言語&lt;/li&gt;
+    &lt;li&gt;画像分析コンペ&lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
+
+&lt;p&gt;
+  はじめまして！えびせんです。&lt;br&gt;
+  今日からWebページ作りに挑戦します！&lt;br&gt;
+  よろしくお願いします！ 🎉
+&lt;/p&gt;
+
+&lt;p&gt;
+  サイト:
+  &lt;a href="https://q.trap.jp/channels/times/25/shr1444" target="_blank"&gt;
+  &lt;!-- ここに自分のチャンネルを貼ろう！--&gt;
+  自分のチャンネル
+  &lt;/a&gt;
+&lt;/p&gt;</code></pre>
+  <button class="copy-btn">コピー</button>
+</div>
+
+<div class="final-box">
+  <h2 style="margin-top:0; border:none; padding:0;">最後に</h2>
+  <p>もっと凝ったものを作りたい、学びたいやインターネット技術に興味がある人はSysAd班にぜひきて下さい!<br>
+  あなたが自己紹介を投稿したtraQというSNSみたいなサービスもtraPが開発しているものです。こういった開発に携わりたいという人もぜひきて下さい！<br>
+  どんなことしているのかなと思う人は気軽に色々な新歓イベントに出たり、近くの部員に聞いたりして下さい！</p>
+  <p><strong>初心者 経験者大歓迎です！！！</strong></p>
+</div>
+
+<script>
+  document.querySelectorAll('.copy-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const code = btn.closest('.copy-wrap').querySelector('code').innerText;
+      navigator.clipboard.writeText(code).then(() => {
+        btn.textContent = 'コピーしました！';
+        btn.classList.add('copied');
+        setTimeout(() => {
+          btn.textContent = 'コピー';
+          btn.classList.remove('copied');
+        }, 2000);
+      });
+    });
+  });
+</script>
+
+</body>
+</html>
